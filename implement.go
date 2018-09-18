@@ -1,16 +1,41 @@
 package go_chaincode_common
 
 import (
-	"github.com/davidkhala/fabric-common-chaincode-golang"
+	. "github.com/davidkhala/fabric-common-chaincode-golang"
+	. "github.com/davidkhala/goutils"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
+	"github.com/hyperledger/fabric/protos/peer"
+	"strings"
 )
 
 type PayerChainCode struct {
-	golang.CommonChaincode
+	CommonChaincode
 	PayerInterface
 	ClinicAuth ClinicAuth
 	MemberAuth MemberAuth
 	PayerAuth  PayerAuth
-	Name       string
-	Logger     *shim.ChaincodeLogger
+}
+
+func (t *PayerChainCode) Invoke(stub shim.ChaincodeStubInterface) (response peer.Response) {
+	DeferPeerResponse(&response)
+	var fcn, params = stub.GetFunctionAndParameters()
+	var responseBytes []byte
+	switch strings.ToLower(fcn) {
+	case "gettokens":
+		var tokenVerify, tokenPay = t.GetTokens(t.MemberAuth, params)
+		responseBytes = []byte(tokenVerify + "|" + tokenPay)
+	case "propose":
+		var feeForm = t.Propose(t.ClinicAuth, params)
+		responseBytes = []byte(feeForm)
+	case "modify":
+		var extraFee = t.Modify(t.ClinicAuth, params)
+		responseBytes = []byte(extraFee)
+	case "revert":
+		t.Revert(t.ClinicAuth, params)
+	case "settlement":
+		t.Settlement(t.PayerAuth, params)
+	default:
+		PanicString("unknown fcn:" + fcn)
+	}
+	return shim.Success(responseBytes)
 }
