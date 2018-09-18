@@ -1,6 +1,6 @@
-#[[constraint]]
-#    name = "github.com/hyperledger/fabric"
-#    branch = "master"
+[[constraint]]
+    name = "github.com/hyperledger/fabric"
+    branch = "master"
 [[constraint]]
     name = "github.com/davidkhala/fabric-common-chaincode-golang"
     branch = "master"
