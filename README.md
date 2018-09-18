@@ -1,0 +1,1 @@
+# go-chaincode-common
