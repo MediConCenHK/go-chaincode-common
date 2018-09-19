@@ -8,6 +8,8 @@ import (
 	"strings"
 )
 
+var commonLogger = shim.NewLogger("common")
+
 type PayerChainCode struct {
 	CommonChaincode
 	PayerInterface
@@ -19,6 +21,7 @@ type PayerChainCode struct {
 func (t *PayerChainCode) Invoke(stub shim.ChaincodeStubInterface) (response peer.Response) {
 	DeferPeerResponse(&response)
 	var fcn, params = stub.GetFunctionAndParameters()
+	commonLogger.Info("common Invoke:fcn:" + fcn)
 	var responseBytes []byte
 	switch strings.ToLower(fcn) {
 	case "gettokens":
