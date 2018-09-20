@@ -1,6 +1,7 @@
 package go_chaincode_common
 
 import (
+	. "github.com/davidkhala/fabric-common-chaincode-golang"
 	. "github.com/davidkhala/goutils"
 	"strconv"
 )
@@ -9,6 +10,7 @@ type TokenData struct {
 	Owner     string
 	OwnerType OwnerType
 	TokenType TokenType
+	Client ClientIdentity
 }
 type OwnerType byte
 type TokenType byte

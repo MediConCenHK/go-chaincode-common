@@ -8,6 +8,8 @@ import (
 	"strings"
 )
 
+const GlobalCCID = "global"
+
 var commonLogger = shim.NewLogger("common")
 
 type PayerChainCode struct {
@@ -18,7 +20,7 @@ type PayerChainCode struct {
 	PayerAuth  PayerAuth
 }
 
-func (t *PayerChainCode) Invoke(stub shim.ChaincodeStubInterface) (response peer.Response) {
+func (t PayerChainCode) Invoke(stub shim.ChaincodeStubInterface) (response peer.Response) {
 	DeferPeerResponse(&response)
 	var fcn, params = stub.GetFunctionAndParameters()
 	commonLogger.Info("common Invoke:fcn:" + fcn)
