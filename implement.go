@@ -26,6 +26,7 @@ func (t PayerChainCode) Invoke(stub shim.ChaincodeStubInterface) (response peer.
 	var responseBytes []byte
 	switch strings.ToLower(fcn) {
 	case "gettokens":
+		t.Logger.Info(t.MemberAuth)
 		var tokenVerify, tokenPay = t.GetTokens(t.MemberAuth, params)
 		responseBytes = []byte(tokenVerify + "|" + tokenPay)
 	case "propose":
