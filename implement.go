@@ -21,7 +21,6 @@ type PayerChainCode struct {
 }
 
 func (t PayerChainCode) Invoke(stub shim.ChaincodeStubInterface) (response peer.Response) {
-	t.Prepare(stub)
 	var fcn, params = stub.GetFunctionAndParameters()
 	commonLogger.Info("common Invoke:fcn:" + fcn)
 	var responseBytes []byte
