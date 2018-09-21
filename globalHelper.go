@@ -20,6 +20,7 @@ func GetTokenGlobal(t CommonChaincode, token string) (tokenData TokenData) {
 
 	args.AppendArg("token")
 	args.AppendArg(token)
-	FromJson(t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload, tokenData)
+	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
+	FromJson(payload, &tokenData)
 	return
 }
