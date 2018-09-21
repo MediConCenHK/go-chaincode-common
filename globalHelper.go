@@ -9,7 +9,7 @@ func PutTokenGlobal(t CommonChaincode, token string, tokenData TokenData) {
 	var args = ArgsBuilder("put")
 	var client = NewClientIdentity(t.CCAPI)
 	tokenData.Client = client
-	t.Logger.Info(ToJson(client))
+	t.Logger.Info(string(ToJson(client)))
 	args.AppendArg("token")
 	args.AppendArg(token)
 	args.AppendArg(string(ToJson(tokenData)))
