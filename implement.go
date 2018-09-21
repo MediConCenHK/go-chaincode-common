@@ -13,4 +13,3 @@ type PayerChainCode struct {
 	MemberAuth MemberAuth
 	PayerAuth  PayerAuth
 }
-

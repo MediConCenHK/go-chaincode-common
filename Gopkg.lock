@@ -42,15 +42,15 @@
   name = "github.com/containerd/continuity"
   packages = ["pathdriver"]
   pruneopts = "UT"
-  revision = "f04dbc0d6e83984cca2c4c8b0d9b833d3809f260"
+  revision = "508d86ade3c25875053b68f5061c20020b3f2894"
 
 [[projects]]
   branch = "master"
-  digest = "1:24363c54d711bb3105af4ac2625df3fb84becb2f2fab46864761761e41f45651"
+  digest = "1:92ee57b9b5502e59fddc7872060f4ba1ac7c9b057cfd20244faade6ad363bc2d"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "030011efef5f743b55d40d347282248b60ec675f"
+  revision = "dbf1e5afc5205965ed3ff94d90471ad39c2f3bc4"
 
 [[projects]]
   branch = "master"
@@ -89,7 +89,7 @@
     "pkg/system",
   ]
   pruneopts = "UT"
-  revision = "d6a7c22f7b9aa028623ef8c7cb31d1bb04dd9d84"
+  revision = "5d848e66df951faffad93d70d8d31470af4cc5b0"
 
 [[projects]]
   digest = "1:ade935c55cd6d0367c843b109b09c9d748b1982952031414740750fdf94747eb"
@@ -161,7 +161,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:f4adb1d6c81acaad4f75b6cdd9a6768ba99987725c02a72098ea35ca0d87637c"
+  digest = "1:cc06db301b2096da1f494e24f984302166e376be42d61045c65bfbbacec1ba7e"
   name = "github.com/hyperledger/fabric"
   packages = [
     "bccsp",
@@ -195,7 +195,7 @@
     "protos/utils",
   ]
   pruneopts = "UT"
-  revision = "e6bdd232138c7e22ccb373587956ee6f5c18725a"
+  revision = "f8ce69508a6241e299e7957fa4f971b5262213c5"
 
 [[projects]]
   branch = "master"
@@ -387,18 +387,18 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "26e67e76b6c3f6ce91f7c52def5af501b4e0f3a2"
+  revision = "2f5d2388922f370f4355f327fcf4cfe9f5583908"
 
 [[projects]]
   branch = "master"
-  digest = "1:e10551220bea6da5274318545537df1012268056be6484b83a3338328050cde0"
+  digest = "1:3bb4674103eef9bf860b88e59048c67ad646de4274ea7de8d71d16e9f8209bff"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "ee1b12c67af419cf5a9be3bdbeea7fc1c5f32f11"
+  revision = "d641721ec2dead6fe5ca284096fe4b1fcd49e427"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
@@ -479,8 +479,6 @@
   input-imports = [
     "github.com/davidkhala/fabric-common-chaincode-golang",
     "github.com/davidkhala/goutils",
-    "github.com/hyperledger/fabric/core/chaincode/shim",
-    "github.com/hyperledger/fabric/protos/peer",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
