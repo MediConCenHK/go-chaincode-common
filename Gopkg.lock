@@ -46,11 +46,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:92ee57b9b5502e59fddc7872060f4ba1ac7c9b057cfd20244faade6ad363bc2d"
+  digest = "1:709ef64b5fcfd68d2827adb1c767975f6d117f0fb2ac8054269af5bbfbc3956c"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "dbf1e5afc5205965ed3ff94d90471ad39c2f3bc4"
+  revision = "62ff6ef5472d392a2a1c449f8bf1d9f763236390"
 
 [[projects]]
   branch = "master"
@@ -161,7 +161,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:cc06db301b2096da1f494e24f984302166e376be42d61045c65bfbbacec1ba7e"
+  digest = "1:15df79c26ba4aa72d6e4d9ac8a564ba49bd1c37cdaf9608ed3b1e89da490bd49"
   name = "github.com/hyperledger/fabric"
   packages = [
     "bccsp",
@@ -177,7 +177,6 @@
     "common/ledger",
     "common/metadata",
     "common/util",
-    "core/chaincode/lib/cid",
     "core/chaincode/platforms",
     "core/chaincode/platforms/ccmetadata",
     "core/chaincode/shim",
