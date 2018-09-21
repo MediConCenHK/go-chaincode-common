@@ -10,7 +10,7 @@ type TokenData struct {
 	Owner     string
 	OwnerType OwnerType
 	TokenType TokenType
-	Client ClientIdentity
+	Client    ClientIdentity
 }
 type OwnerType byte
 type TokenType byte
