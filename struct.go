@@ -12,6 +12,13 @@ type TokenData struct {
 	TokenType TokenType
 	Client    ClientIdentity
 }
+type TokenTransferRequest struct {
+	FromOwner     string
+	FromOwnerType OwnerType
+	ToOwner       string
+	ToOwnerType   OwnerType
+}
+
 type OwnerType byte
 type TokenType byte
 
