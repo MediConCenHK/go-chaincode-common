@@ -15,22 +15,22 @@ type PayerChainCode struct {
 	PayerAuth  PayerAuth
 }
 
-func (t ClinicAuth) Exec() bool {
-	result := t()
+func (t ClinicAuth) Exec(s ...string) bool {
+	result := t(s...)
 	if result {
 		PanicString("Clinic Authentication failed")
 	}
 	return result
 }
-func (t MemberAuth) Exec() bool {
-	result := t()
+func (t MemberAuth) Exec(s ...string) bool {
+	result := t(s...)
 	if result {
 		PanicString("Member Authentication failed")
 	}
 	return result
 }
-func (t PayerAuth) Exec() bool {
-	result := t()
+func (t PayerAuth) Exec(s ...string) bool {
+	result := t(s...)
 	if result {
 		PanicString("Payer Authentication failed")
 	}
