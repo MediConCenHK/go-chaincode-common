@@ -46,8 +46,7 @@ func (t TokenType) ToString() string {
 }
 
 type FeeEntry struct {
-	Name              string //co-payment | extra-medicine | surgery | diagnose | sick leave days | refer letter
-	RawAmount         string //filled by clinic, extensible for number handle
-	ReimbursementType string //ratio|fixed amount for insurance|deductible(fixed amount for member)|follow-up visit
-	Comment           string //diagnose|refer letter
+	Name      string //co-payment | extra-medicine | surgery | diagnose | sick leave days | refer letter
+	RawAmount string //filled by clinic, extensible for number handle
+	Comment   string //diagnose|refer letter
 }
