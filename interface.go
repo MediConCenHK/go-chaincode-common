@@ -8,9 +8,9 @@ type PayerInterface interface {
 	Revert(auth ClinicAuth, params []string)
 	Settlement(auth PayerAuth, params []string)
 }
-type ClinicAuth func(...string) bool
-type MemberAuth func(...string) bool
-type PayerAuth func(...string) bool
+type ClinicAuth func(transient map[string][]byte) bool
+type MemberAuth func(transient map[string][]byte) bool
+type PayerAuth func(transient map[string][]byte) bool
 
 type VisitData struct {
 	Token            string //provided by QRCode
