@@ -61,8 +61,7 @@
   revision = "7fe30d1d79179fae46bc45bb9d6f232d3642558b"
 
 [[projects]]
-  branch = "master"
-  digest = "1:1c8432e7beb3e477219fdd551735e48352856c0a8b68dcb657905240e669af47"
+  digest = "1:49a2a779b1af8f02547b5a505eb1382f9d42299ec7215f34a32535e6af9a1c9e"
   name = "github.com/docker/docker"
   packages = [
     "api/types",
@@ -76,20 +75,23 @@
     "api/types/swarm",
     "api/types/swarm/runtime",
     "api/types/versions",
-    "errdefs",
     "opts",
+    "pkg/archive",
     "pkg/fileutils",
     "pkg/homedir",
     "pkg/idtools",
     "pkg/ioutils",
+    "pkg/jsonmessage",
     "pkg/longpath",
     "pkg/mount",
     "pkg/pools",
     "pkg/stdcopy",
     "pkg/system",
+    "pkg/term",
+    "pkg/term/windows",
   ]
   pruneopts = "UT"
-  revision = "9f296d1e6fccd9f73bae345e4aad4f3f6e92fdeb"
+  revision = "a422774e593b33bd287d9890544ad9e09b380d8c"
 
 [[projects]]
   digest = "1:ade935c55cd6d0367c843b109b09c9d748b1982952031414740750fdf94747eb"
@@ -108,25 +110,12 @@
   version = "v0.3.3"
 
 [[projects]]
-  digest = "1:4f57c53dc1244bd265be71bc4e75fc48132f1cf2927b19de52ed600b7d73cd8e"
-  name = "github.com/docker/libnetwork"
-  packages = ["ipamutils"]
-  pruneopts = "UT"
-  revision = "6d23f11e681f24ee31802939e243fe8be41a75eb"
-  version = "v0.8.0-dev.2"
-
-[[projects]]
-  digest = "1:730879a0d2bfbe16e6d36c4e57e308e46babe0453f013be71d98f09fda5d1cf5"
+  digest = "1:ed17414a259d9c62eb01cf8c2b0231e6310948337197ebd01161121a36be3759"
   name = "github.com/fsouza/go-dockerclient"
-  packages = [
-    ".",
-    "internal/archive",
-    "internal/jsonmessage",
-    "internal/term",
-  ]
+  packages = ["."]
   pruneopts = "UT"
-  revision = "1b33efcb40bef3494af8bc6a1f73600f37a3c9d1"
-  version = "v1.3.0"
+  revision = "51bd33c0c7792b2566054672a4915b406d988cc6"
+  version = "v1.2.1"
 
 [[projects]]
   digest = "1:bbadccf3d3317ea03c0dac0b45b673b4b397c8f91a1d2eff550a3c51c4ad770e"
@@ -283,9 +272,12 @@
   version = "v1.0.1"
 
 [[projects]]
-  digest = "1:38ee335aedf4626620f3cf8f605661e71abdcce7b40b38921962beb3980f0a20"
+  digest = "1:1869683e323ebff2bdf8adcb560f82bf6f8d94019d35099e3403f7df12e9c07e"
   name = "github.com/opencontainers/runc"
-  packages = ["libcontainer/user"]
+  packages = [
+    "libcontainer/system",
+    "libcontainer/user",
+  ]
   pruneopts = "UT"
   revision = "baf6536d6259209c3edfa2b22237af82942d3dfa"
   version = "v0.1.1"
