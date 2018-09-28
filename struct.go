@@ -22,7 +22,7 @@ type TokenTransferRequest struct {
 type OwnerType byte
 type TokenType byte
 
-func (t OwnerType) ToString() string {
+func (t OwnerType) To() string {
 	switch t {
 	case 1:
 		return "member"
@@ -34,15 +34,40 @@ func (t OwnerType) ToString() string {
 	PanicString("invalid ownerType" + strconv.Itoa(int(t)))
 	return ""
 }
-func (t TokenType) ToString() string {
+func (OwnerType) From(s string) (OwnerType) {
+	var n OwnerType;
+	switch s {
+	case "member":
+		n = 1
+	case "network":
+		n = 2
+	case "insurance":
+		n = 3
+	}
+	PanicString("invalid ownerType string" + s)
+	return n
+}
+func (t TokenType) To() string {
+	var s string
 	switch t {
 	case 1:
-		return "verify"
+		s = "verify"
 	case 2:
-		return "pay"
+		s = "pay"
 	}
 	PanicString("invalid tokenType" + strconv.Itoa(int(t)))
-	return ""
+	return s
+}
+func (TokenType) From(s string) (TokenType) {
+	var n TokenType
+	switch s {
+	case "verify":
+		n = 1
+	case "pay":
+		n = 2
+	}
+	PanicString("invalid tokenType string:" + s)
+	return n
 }
 
 type FeeEntry struct {
