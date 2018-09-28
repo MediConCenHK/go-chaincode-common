@@ -17,21 +17,21 @@ type PayerChainCode struct {
 
 func (t ClinicAuth) Exec(transient map[string][]byte) bool {
 	result := t(transient)
-	if result {
+	if ! result {
 		PanicString("Clinic Authentication failed")
 	}
 	return result
 }
 func (t MemberAuth) Exec(transient map[string][]byte) bool {
 	result := t(transient)
-	if result {
+	if ! result {
 		PanicString("Member Authentication failed")
 	}
 	return result
 }
 func (t PayerAuth) Exec(transient map[string][]byte) bool {
 	result := t(transient)
-	if result {
+	if ! result {
 		PanicString("Payer Authentication failed")
 	}
 	return result
