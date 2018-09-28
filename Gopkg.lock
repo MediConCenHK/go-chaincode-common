@@ -46,11 +46,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:223eb8ff366f28b2e7017d7d1bac6bee8ccfbc87d107a827b7c68782d753d979"
+  digest = "1:667f8a6aca182fd64929dca26d3b6a5a572bfd2d91d6fc59e803bcb78c33f6e4"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "4d8389580c5a72557486cd7b1b15ad1cfbd2a73c"
+  revision = "2b3f741b866d5faca0060e90a025bf3700e0e5b8"
 
 [[projects]]
   branch = "master"
@@ -183,7 +183,7 @@
     "protos/utils",
   ]
   pruneopts = "UT"
-  revision = "dbc79eb1bfbf6c39b2784005513b613a0a87ac3c"
+  revision = "846dcd6213db8d5da55ee6453538e7f8c63056f8"
 
 [[projects]]
   branch = "master"
@@ -370,11 +370,11 @@
     "ssh/terminal",
   ]
   pruneopts = "UT"
-  revision = "0e37d006457bf46f9e6692014ba72ef82c33022c"
+  revision = "5295e8364332db77d75fce11f1d19c053919a9c9"
 
 [[projects]]
   branch = "master"
-  digest = "1:deafe4ab271911fec7de5b693d7faae3f38796d9eb8622e2b9e7df42bb3dfea9"
+  digest = "1:505dbee0833715a72a529bb57c354826ad42a4496fad787fa143699b4de1a6d0"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -386,18 +386,18 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "f04abc6bdfa7a0171a8a0c9fd2ada9391044d056"
+  revision = "4dfa2610cdf3b287375bbba5b8f2a14d3b01d8de"
 
 [[projects]]
   branch = "master"
-  digest = "1:fc06d26f7b6384b7cd00ba98d47690c1c690bd905d8e2936bb223da74b9733ca"
+  digest = "1:2c607ffa8a0a34a9acba4aba7b33d981b5a2150bfcec41b1f2ef1d791bcf6c14"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "b09afc3d579e346c4a7e4705953acaf6f9e551bd"
+  revision = "dad3d9fb7b6e83d0f9ac8f54670f6334c3a287b4"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
