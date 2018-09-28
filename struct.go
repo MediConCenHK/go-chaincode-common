@@ -34,7 +34,7 @@ func (t OwnerType) To() string {
 	PanicString("invalid ownerType" + strconv.Itoa(int(t)))
 	return ""
 }
-func (OwnerType) From(s string) (OwnerType) {
+func (OwnerType) New(s string) (OwnerType) {
 	var n OwnerType;
 	switch s {
 	case "member":
@@ -58,7 +58,7 @@ func (t TokenType) To() string {
 	PanicString("invalid tokenType" + strconv.Itoa(int(t)))
 	return s
 }
-func (TokenType) From(s string) (TokenType) {
+func (TokenType) New(s string) (TokenType) {
 	var n TokenType
 	switch s {
 	case "verify":
