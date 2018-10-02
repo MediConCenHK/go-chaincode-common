@@ -7,13 +7,13 @@ import (
 
 const (
 	GlobalCCID        = "global" //used in other chaincode, please DONOT remove
-	fcn_putToken      = "putToken"
-	fcn_getToken      = "getToken"
-	fcn_transferToken = "transferToken"
+	Fcn_putToken      = "putToken"
+	Fcn_getToken      = "getToken"
+	Fcn_transferToken = "transferToken"
 )
 
 func PutTokenGlobal(t CommonChaincode, token string, tokenData TokenData) {
-	var args = ArgsBuilder(fcn_putToken)
+	var args = ArgsBuilder(Fcn_putToken)
 	var client = NewClientIdentity(t.CCAPI)
 	tokenData.Client = client
 	args.AppendArg(token)
@@ -22,14 +22,14 @@ func PutTokenGlobal(t CommonChaincode, token string, tokenData TokenData) {
 }
 
 func GetTokenGlobal(t CommonChaincode, token string) (tokenData TokenData) {
-	var args = ArgsBuilder(fcn_getToken)
+	var args = ArgsBuilder(Fcn_getToken)
 	args.AppendArg(token)
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
 	FromJson(payload, &tokenData)
 	return
 }
 func TransferTokenGlobal(t CommonChaincode, token string, request TokenTransferRequest) (tokenData TokenData) {
-	var args = ArgsBuilder(fcn_transferToken)
+	var args = ArgsBuilder(Fcn_transferToken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(request))
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
