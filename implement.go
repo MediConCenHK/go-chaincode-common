@@ -5,8 +5,6 @@ import (
 	. "github.com/davidkhala/goutils"
 )
 
-const GlobalCCID = "global" //used in other chaincode, please DONOT remove
-
 type PayerChainCode struct {
 	CommonChaincode
 	PayerInterface
