@@ -8,6 +8,15 @@ type PayerInterface interface {
 	Revert(auth ClinicAuth, params []string)
 	Settlement(auth PayerAuth, params []string)
 }
+
+const (
+	Payer_fcn_getTokens  = "getTokens"
+	Payer_fcn_propose    = "propose"
+	Payer_fcn_modify     = "modify"
+	Payer_fcn_revert     = "revert"
+	Payer_fcn_settlement = "settlement"
+)
+
 type ClinicAuth func(transient map[string][]byte) bool
 type MemberAuth func(transient map[string][]byte) bool
 type PayerAuth func(transient map[string][]byte) bool
