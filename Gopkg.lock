@@ -46,19 +46,19 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:8d0aee617da49eba571eb1e313602e85fbebad731ac3dbe1c582ae98588c74f6"
+  digest = "1:1ce644d4238d582867231dad15eaf339abe9f1f36010d364c83860643fe842f4"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "d4d75c74087af920f423d47c77ebfcebf138a17e"
+  revision = "73197d164fecf441c6c7305cfb9394f0fe4e91ac"
 
 [[projects]]
   branch = "master"
-  digest = "1:43ca0cf4c44c0eaec1f819411473965dfb344ae28a003bcb98c9caa5c6d51224"
+  digest = "1:2559ba0534cc749e8920c0690428ccb9f8d22c91336e12c5cd1883b3157a6919"
   name = "github.com/davidkhala/goutils"
   packages = ["."]
   pruneopts = "UT"
-  revision = "ffc6e3a504f6b4dd4a8ad7b38a11b919f3b7fe40"
+  revision = "6092f40362e1298459d8337ae089d81af1c46aa3"
 
 [[projects]]
   digest = "1:49a2a779b1af8f02547b5a505eb1382f9d42299ec7215f34a32535e6af9a1c9e"
@@ -478,6 +478,8 @@
   input-imports = [
     "github.com/davidkhala/fabric-common-chaincode-golang",
     "github.com/davidkhala/goutils",
+    "github.com/hyperledger/fabric/core/chaincode/shim",
+    "github.com/hyperledger/fabric/protos/peer",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
