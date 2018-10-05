@@ -46,11 +46,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:49a4bbd038f7d19fece504dce9cae15f5e190bc02c6b408ac12fad09b11198dd"
+  digest = "1:ef8e0f1f27773423459fde84dab351227cb3fdb7b978331c858459bcc4636600"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "2915973342c731ff1dd0a54595e742dc2159bd12"
+  revision = "fcaf4c28531d4f375a00a7a10c003405072684e5"
 
 [[projects]]
   branch = "master"
@@ -150,7 +150,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:ee917be83b1033111fe6ed162d768228919e0f39dcb26fd7de3b7f618a27189c"
+  digest = "1:892ce63cfeaee8fa15c6394f69961feb067e2101e6e726d16086592778e0900c"
   name = "github.com/hyperledger/fabric"
   packages = [
     "bccsp",
@@ -183,7 +183,7 @@
     "protos/utils",
   ]
   pruneopts = "UT"
-  revision = "fb9c5da63d9ab219ae633df8da723e14efcfdddb"
+  revision = "f0a4512fe946942c200b8633c06225ea9ad2d24b"
 
 [[projects]]
   branch = "master"
@@ -197,12 +197,12 @@
   revision = "6b78f7a22d950103fb2669aabb969f56d42d283b"
 
 [[projects]]
-  branch = "master"
-  digest = "1:f44d34fda864bed6d6c71514cd40b2ee097e6e67f745d5d014113e1faa5af8b7"
+  digest = "1:0a69a1c0db3591fcefb47f115b224592c8dfa4368b7ba9fae509d5e16cdc95c8"
   name = "github.com/konsorten/go-windows-terminal-sequences"
   packages = ["."]
   pruneopts = "UT"
-  revision = "b729f2633dfe35f4d1d8a32385f6685610ce1cb5"
+  revision = "5c8c8bd35d3832f5d134ae1e1e375b69a4d25242"
+  version = "v1.0.1"
 
 [[projects]]
   digest = "1:ca955a9cd5b50b0f43d2cc3aeb35c951473eeca41b34eb67507f1dbcc0542394"
@@ -386,18 +386,18 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "f5e5bdd778241bfefa8627f7124c39cd6ad8d74f"
+  revision = "68fc911561ed0cb104e22deafa05515909b706ab"
 
 [[projects]]
   branch = "master"
-  digest = "1:8375ca24f586acd7b9a0ec8c6f24a6706a3ffa3dd7a80fd0e6e51caba139408f"
+  digest = "1:8a35cf7e4a316cee63d627d7de15b81901a19f8a3f9aff0d1a80c746a57234d6"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "af653ce8b74f808d092db8ca9741fbb63d2a469d"
+  revision = "8469e314837c2e2471561de5c47bbf8bfd0d9099"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
