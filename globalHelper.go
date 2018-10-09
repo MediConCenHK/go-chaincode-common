@@ -12,27 +12,39 @@ const (
 	Fcn_transferToken = "transferToken"
 )
 
-func PutTokenGlobal(t CommonChaincode, token string, tokenData TokenData) {
+func PutTokenGlobal(t CommonChaincode, token string, tokenData *TokenData) {
+	if token == "" || tokenData == nil {
+		return
+	}
 	var args = ArgsBuilder(Fcn_putToken)
 	var client = NewClientIdentity(t.CCAPI)
 	tokenData.Client = client
 	args.AppendArg(token)
-	args.AppendBytes(ToJson(tokenData))
+	args.AppendBytes(ToJson(*tokenData))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "") //TODO check response
 }
 
-func GetTokenGlobal(t CommonChaincode, token string) (tokenData TokenData) {
+func GetTokenGlobal(t CommonChaincode, token string) (tokenData *TokenData) {
+	if token == "" {
+		return
+	}
 	var args = ArgsBuilder(Fcn_getToken)
 	args.AppendArg(token)
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
-	FromJson(payload, &tokenData)
+	if payload == nil {
+		return
+	}
+	FromJson(payload, tokenData)
 	return
 }
-func TransferTokenGlobal(t CommonChaincode, token string, request TokenTransferRequest) (tokenData TokenData) {
+func TransferTokenGlobal(t CommonChaincode, token string, request TokenTransferRequest) (tokenData *TokenData) {
 	var args = ArgsBuilder(Fcn_transferToken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(request))
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
-	FromJson(payload, &tokenData)
+	if payload == nil {
+		return
+	}
+	FromJson(payload, tokenData)
 	return
 }
