@@ -20,15 +20,23 @@ type TokenTransferRequest struct {
 }
 
 type OwnerType byte
+
+const (
+	_ = iota
+	OwnerTypeMember
+	OwnerTypeNetwork
+	OwnerTypeInsurance
+)
+
 type TokenType byte
 
 func (t OwnerType) To() string {
 	switch t {
-	case 1:
+	case OwnerTypeMember:
 		return "member"
-	case 2:
+	case OwnerTypeNetwork:
 		return "network"
-	case 3:
+	case OwnerTypeInsurance:
 		return "insurance"
 	}
 	PanicString("invalid ownerType" + strconv.Itoa(int(t)))
@@ -38,21 +46,28 @@ func (OwnerType) New(s string) (OwnerType) {
 	var n OwnerType;
 	switch s {
 	case "member":
-		n = 1
+		n = OwnerTypeMember
 	case "network":
-		n = 2
+		n = OwnerTypeNetwork
 	case "insurance":
-		n = 3
+		n = OwnerTypeInsurance
 	}
 	PanicString("invalid ownerType string" + s)
 	return n
 }
+
+const (
+	_ = iota
+	TokenTypeVerify
+	TokenTypePay
+)
+
 func (t TokenType) To() string {
 	var s string
 	switch t {
-	case 1:
+	case TokenTypeVerify:
 		s = "verify"
-	case 2:
+	case TokenTypePay:
 		s = "pay"
 	}
 	PanicString("invalid tokenType" + strconv.Itoa(int(t)))
@@ -62,9 +77,9 @@ func (TokenType) New(s string) (TokenType) {
 	var n TokenType
 	switch s {
 	case "verify":
-		n = 1
+		n = TokenTypeVerify
 	case "pay":
-		n = 2
+		n = TokenTypePay
 	}
 	PanicString("invalid tokenType string:" + s)
 	return n
