@@ -46,11 +46,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:1262bf2dea7f89b16504fef7dc47a6a87b35799bdb0d25276e5fd7d3bc4c5f4a"
+  digest = "1:d9dac9fb02c0465bc07fd3de5515b29acdb44c6112509378581b56538289c91f"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "4d34a723bc34b5dcfc21938cff08380a651a4b61"
+  revision = "f31fb0c65984b131d8b5c94eec9d829cbecd2273"
 
 [[projects]]
   branch = "master"
@@ -183,7 +183,7 @@
     "protos/utils",
   ]
   pruneopts = "UT"
-  revision = "595a8c21e1a0e355da8b66f691f627660deaff33"
+  revision = "235cef2de6ae962d3906f1c606583bf6b450a8e6"
 
 [[projects]]
   branch = "master"
@@ -370,7 +370,7 @@
     "ssh/terminal",
   ]
   pruneopts = "UT"
-  revision = "e3636079e1a4c1f337f212cc5cd2aca108f6c900"
+  revision = "7c1a557ab941a71c619514f229f0b27ccb0c27cf"
 
 [[projects]]
   branch = "master"
