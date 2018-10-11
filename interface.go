@@ -1,8 +1,14 @@
 package go_chaincode_common
 
-type PayerInterface interface {
-	//TODO: is callback designed needed?
+import (
+	. "github.com/davidkhala/goutils"
+)
+type Payer interface {
 	GetTokens(auth MemberAuth, params []string) (tokenVerify, tokenPay string)
+}
+
+//NIContract: Network-Insurance contract interface
+type NIContract interface {
 	Propose(auth ClinicAuth, params []string) (feeForm string)
 	Modify(auth ClinicAuth, params []string) (extraFee string)
 	Revert(auth ClinicAuth, params []string)
@@ -11,15 +17,46 @@ type PayerInterface interface {
 
 const (
 	Payer_fcn_getTokens  = "getTokens"
-	Payer_fcn_propose    = "propose"
-	Payer_fcn_modify     = "modify"
-	Payer_fcn_revert     = "revert"
-	Payer_fcn_settlement = "settlement"
+	Contract_fcn_propose    = "propose"
+	Contract_fcn_modify     = "modify"
+	Contract_fcn_revert     = "revert"
+	Contract_fcn_settlement = "settlement"
 )
 
 type ClinicAuth func(transient map[string][]byte) bool
 type MemberAuth func(transient map[string][]byte) bool
-type PayerAuth func(transient map[string][]byte) bool
+type NetworkAuth func(transient map[string][]byte) bool
+type InsuranceAuth func(transient map[string][]byte) bool
+type PayerAuth func(transient map[string][]byte) bool //TODO for settlement extension
+
+func (t ClinicAuth) Exec(transient map[string][]byte) bool {
+	result := t(transient)
+	if ! result {
+		PanicString("Clinic Authentication failed")
+	}
+	return result
+}
+func (t MemberAuth) Exec(transient map[string][]byte) bool {
+	result := t(transient)
+	if ! result {
+		PanicString("Member Authentication failed")
+	}
+	return result
+}
+func (t NetworkAuth) Exec(transient map[string][]byte) bool {
+	result := t(transient)
+	if ! result {
+		PanicString("Network Authentication failed")
+	}
+	return result
+}
+func (t InsuranceAuth) Exec(transient map[string][]byte) bool {
+	result := t(transient)
+	if ! result {
+		PanicString("Insurance Authentication failed")
+	}
+	return result
+}
 
 type VisitData struct {
 	Token            string //provided by QRCode

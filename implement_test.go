@@ -15,7 +15,7 @@ const (
 )
 
 type TestChaincode struct {
-	PayerChainCode
+	NIContractChainCode
 }
 
 func (t *TestChaincode) Init(stub shim.ChaincodeStubInterface) (response peer.Response) {
@@ -41,7 +41,7 @@ func (t *TestChaincode) Invoke(stub shim.ChaincodeStubInterface) (response peer.
 }
 
 var cc = TestChaincode{
-	NewPayerChainCode(testName),
+	NewNIContract(testName),
 }
 
 func TestInit(t *testing.T) {

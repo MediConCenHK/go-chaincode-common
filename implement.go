@@ -2,46 +2,37 @@ package go_chaincode_common
 
 import (
 	. "github.com/davidkhala/fabric-common-chaincode-golang"
-	. "github.com/davidkhala/goutils"
-	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
 
-type PayerChainCode struct {
+type InsuranceChaincode struct {
 	*CommonChaincode
-	PayerInterface
+	MemberAuth
+	InsuranceAuth
+}
+type NetworkChainCode struct {
+	*CommonChaincode
 	ClinicAuth ClinicAuth
-	MemberAuth MemberAuth
-	PayerAuth  PayerAuth
+	NetworkAuth
+}
+type NIContractChainCode struct {
+	*CommonChaincode
+	NIContract
+	NetworkAuth
+	InsuranceAuth
 }
 
-func NewPayerChainCode(name string) PayerChainCode {
+func NewNIContract(name string) NIContractChainCode {
 	var commonCC = CommonChaincode{}
 	commonCC.SetLogger(name)
-	return PayerChainCode{CommonChaincode: &commonCC}
+	return NIContractChainCode{CommonChaincode: &commonCC}
 }
-func (t *PayerChainCode) Prepare(ccAPI shim.ChaincodeStubInterface) {
-	t.CommonChaincode.CCAPI = ccAPI
-	t.CommonChaincode.Channel = ccAPI.GetChannelID()
+func NewNetworkChainCode(name string) NetworkChainCode {
+	var commonCC = CommonChaincode{}
+	commonCC.SetLogger(name)
+	return NetworkChainCode{CommonChaincode: &commonCC}
 }
-
-func (t ClinicAuth) Exec(transient map[string][]byte) bool {
-	result := t(transient)
-	if ! result {
-		PanicString("Clinic Authentication failed")
-	}
-	return result
-}
-func (t MemberAuth) Exec(transient map[string][]byte) bool {
-	result := t(transient)
-	if ! result {
-		PanicString("Member Authentication failed")
-	}
-	return result
-}
-func (t PayerAuth) Exec(transient map[string][]byte) bool {
-	result := t(transient)
-	if ! result {
-		PanicString("Payer Authentication failed")
-	}
-	return result
+func NewInsuranceChaincode(name string) InsuranceChaincode {
+	var commonCC = CommonChaincode{}
+	commonCC.SetLogger(name)
+	return InsuranceChaincode{CommonChaincode: &commonCC}
 }
