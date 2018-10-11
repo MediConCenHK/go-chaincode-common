@@ -42,19 +42,6 @@ func (t OwnerType) To() string {
 	PanicString("invalid ownerType" + strconv.Itoa(int(t)))
 	return ""
 }
-func (OwnerType) New(s string) (OwnerType) {
-	var n OwnerType;
-	switch s {
-	case "member":
-		n = OwnerTypeMember
-	case "network":
-		n = OwnerTypeNetwork
-	case "insurance":
-		n = OwnerTypeInsurance
-	}
-	PanicString("invalid ownerType string" + s)
-	return n
-}
 
 const (
 	_ = iota
@@ -72,17 +59,6 @@ func (t TokenType) To() string {
 	}
 	PanicString("invalid tokenType" + strconv.Itoa(int(t)))
 	return s
-}
-func (TokenType) New(s string) (TokenType) {
-	var n TokenType
-	switch s {
-	case "verify":
-		n = TokenTypeVerify
-	case "pay":
-		n = TokenTypePay
-	}
-	PanicString("invalid tokenType string:" + s)
-	return n
 }
 
 type FeeEntry struct {
