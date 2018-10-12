@@ -3,6 +3,7 @@ package go_chaincode_common
 import (
 	. "github.com/davidkhala/goutils"
 )
+
 type Payer interface {
 	GetTokens(auth MemberAuth, params []string) (tokenVerify, tokenPay string)
 }
@@ -16,7 +17,7 @@ type NIContract interface {
 }
 
 const (
-	Payer_fcn_getTokens  = "getTokens"
+	Payer_fcn_getTokens     = "getTokens"
 	Contract_fcn_propose    = "propose"
 	Contract_fcn_modify     = "modify"
 	Contract_fcn_revert     = "revert"
@@ -59,9 +60,8 @@ func (t InsuranceAuth) Exec(transient map[string][]byte) bool {
 }
 
 type VisitData struct {
-	Token            string //provided by QRCode
-	ClinicID         string //provided by clinic
-	Doctor           Doctor //provided by clinic
-	MedicalNetworkID string //provided by clinic
+	Member         string //derived from QRCode,or plain memberData
+	Clinic         string //provided by clinic
+	Doctor         string //provided by clinic
+	MedicalNetwork string //provided by clinic
 }
-type Doctor string //doctor code
