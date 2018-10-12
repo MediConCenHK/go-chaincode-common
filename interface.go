@@ -18,7 +18,8 @@ type NIContract interface {
 }
 
 const (
-	Payer_fcn_getTokens     = "getTokens"
+	Payer_fcn_genTokens     = "genTokens"
+	Payer_fcn_getMemberData = "getMemberData"
 	Contract_fcn_propose    = "propose"
 	Contract_fcn_modify     = "modify"
 	Contract_fcn_revert     = "revert"
