@@ -5,7 +5,8 @@ import (
 )
 
 type Payer interface {
-	GetTokens(auth MemberAuth, params []string) (tokenVerify, tokenPay string)
+	GenTokens(auth MemberAuth, params []string) (tokens string)
+	GetMemberData(params []string) (memberData string)
 }
 
 //NIContract: Network-Insurance contract interface
