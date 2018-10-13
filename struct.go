@@ -60,6 +60,16 @@ func (t TokenType) To() string {
 	PanicString("invalid tokenType" + strconv.Itoa(int(t)))
 	return s
 }
+func (TokenType) From(s string) TokenType {
+	switch s {
+	case "verify":
+		return TokenTypeVerify
+	case "pay":
+		return TokenTypePay
+	}
+	PanicString("invalid tokenType:" + s)
+	return 0
+}
 
 type FeeEntry struct {
 	Name      string //co-payment | extra-medicine | surgery | diagnose | sick leave days | refer letter
