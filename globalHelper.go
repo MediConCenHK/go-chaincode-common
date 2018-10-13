@@ -24,18 +24,19 @@ func PutTokenGlobal(t CommonChaincode, token string, tokenData *TokenData) {
 	t.InvokeChaincode(GlobalCCID, args.Get(), "") //TODO check response
 }
 
-func GetTokenGlobal(t CommonChaincode, token string) (tokenData *TokenData) {
+func GetTokenGlobal(t CommonChaincode, token string) (*TokenData) {
 	if token == "" {
-		return
+		return nil
 	}
 	var args = ArgsBuilder(Fcn_getToken)
 	args.AppendArg(token)
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
 	if payload == nil {
-		return
+		return nil
 	}
+	var tokenData = &TokenData{}
 	FromJson(payload, tokenData)
-	return
+	return tokenData
 }
 func TransferTokenGlobal(t CommonChaincode, token string, request TokenTransferRequest) (tokenData *TokenData) {
 	var args = ArgsBuilder(Fcn_transferToken)
