@@ -18,7 +18,7 @@ func PutTokenGlobal(t CommonChaincode, token string, tokenData *TokenData) {
 	}
 	var args = ArgsBuilder(Fcn_putToken)
 	var client = NewClientIdentity(t.CCAPI)
-	tokenData.Client = client
+	tokenData.Client = ClientIdentity{MspID: client.MspID, Attrs: client.Attrs} //TODO gossip sync delay workaround:use shortVersion of ClientIdentity
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(*tokenData))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "") //TODO check response
