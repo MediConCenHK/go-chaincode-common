@@ -46,19 +46,19 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:f55c6d717b70ff777dacc4cfc42dc937fcd3034609b4dd176e2017cddbb68542"
+  digest = "1:a5c89c7dd630fa7e80c8c8ce4064bb50939d7fb5440f2ed5c16ad2ede62efa2c"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "b9908eece8fd62160c0882a78ec3f4f44388409a"
+  revision = "e841051a9b619eb549bb7df43ce4324df6ea5b6b"
 
 [[projects]]
   branch = "master"
-  digest = "1:a7d386052c2c244f0e823c4b1bb2f6c290cfeddc99a5ea34e21b78b343435551"
+  digest = "1:948e7c2d2900216a56aba24276a95e45eecb84b8be84121ed9a9f5f42e112038"
   name = "github.com/davidkhala/goutils"
   packages = ["."]
   pruneopts = "UT"
-  revision = "6679568f1dc3206ee1130e3c1617dad8dcf76fae"
+  revision = "949b87957d85cdb6fd38c503a7eef72e8bdcb8c7"
 
 [[projects]]
   digest = "1:49a2a779b1af8f02547b5a505eb1382f9d42299ec7215f34a32535e6af9a1c9e"
@@ -183,7 +183,7 @@
     "protos/utils",
   ]
   pruneopts = "UT"
-  revision = "ce1bd7286ed0c1915dc9020182d8e9ad5a9959de"
+  revision = "d942308df6302d3510e835bad62f861ad854b4b3"
 
 [[projects]]
   branch = "master"
@@ -386,7 +386,7 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "49bb7cea24b1df9410e1712aa6433dae904ff66a"
+  revision = "04a2e542c03f1d053ab3e4d6e5abcd4b66e2be8e"
 
 [[projects]]
   branch = "master"
@@ -428,7 +428,7 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "af9cb2a35e7f169ec875002c1829c9b315cddc04"
+  revision = "94acd270e44e65579b9ee3cdab25034d33fed608"
 
 [[projects]]
   digest = "1:2dab32a43451e320e49608ff4542fdfc653c95dcc35d0065ec9c6c3dd540ed74"
