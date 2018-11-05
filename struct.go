@@ -8,6 +8,7 @@ import (
 
 type TokenData struct {
 	Owner     string
+	Issuer    string
 	OwnerType OwnerType
 	TokenType TokenType
 	Client    ClientIdentity
