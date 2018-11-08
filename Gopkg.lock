@@ -46,19 +46,19 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:dc4519009ea8375e93665fd64ff92b0acc5be329d6d2fa822af239886339f31a"
+  digest = "1:a4537fbedbe959fc120e78d6e310e8c868fa6dfe2dcaa189a4c0559878d1fbbf"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "2b36646f3e98ddfa01723363bf58c1185cb97c2a"
+  revision = "b17a5227854a92ace31f32aed0fa01abe31f5226"
 
 [[projects]]
   branch = "master"
-  digest = "1:948e7c2d2900216a56aba24276a95e45eecb84b8be84121ed9a9f5f42e112038"
+  digest = "1:12071abd60bcbf07922ccf9c1e4147ee3151b8d0dba53f26d34a3f43c5fd4f02"
   name = "github.com/davidkhala/goutils"
   packages = ["."]
   pruneopts = "UT"
-  revision = "949b87957d85cdb6fd38c503a7eef72e8bdcb8c7"
+  revision = "890b3702dca9bfc7b81a534cc1ea2d500142a4fd"
 
 [[projects]]
   digest = "1:49a2a779b1af8f02547b5a505eb1382f9d42299ec7215f34a32535e6af9a1c9e"
@@ -374,7 +374,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:edb6e15d08296b91f0cd5b8b24d3778e122258e38493cb576094aa4764f3c826"
+  digest = "1:6ca51c5d8a610b3da56856df7a8f8f3e075eba8d5f7a4acbadd79b2d2a368054"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -386,18 +386,18 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "10aee181995363b41f712a55844a0dd52ea04646"
+  revision = "03003ca0c849e57b6ea29a4bab8d3cb6e4d568fe"
 
 [[projects]]
   branch = "master"
-  digest = "1:f97031542387802b6fd8867c3f29488c2852aac19954ed51df6231a4fadf1707"
+  digest = "1:6a875550c3b582f6c2d7e2ce44aba792511f00016d7c46b0a4fb26f730ef3058"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "3a76605856fddce5718553cbb8bd50ca492a7274"
+  revision = "66b7b1311ac80bbafcd2daeef9a5e6e2cd1e2399"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
@@ -428,7 +428,7 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "c830210a61dfaa790e1920f8d0470fc27bc2efbe"
+  revision = "5fc9ac5403620be16bcdb0c8e7644b1178472c3b"
 
 [[projects]]
   digest = "1:2dab32a43451e320e49608ff4542fdfc653c95dcc35d0065ec9c6c3dd540ed74"
