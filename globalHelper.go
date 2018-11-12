@@ -10,24 +10,17 @@ const (
 	Fcn_putToken      = "putToken"
 	Fcn_getToken      = "getToken"
 	Fcn_transferToken = "transferToken"
+	Fcn_tokenHistory  = "tokenHistory"
 )
 
-func PutTokenGlobal(t CommonChaincode, token string, tokenData *TokenData) {
-	if token == "" || tokenData == nil {
-		return
-	}
+func PutTokenGlobal(t CommonChaincode, token string, tokenData TokenData) {
 	var args = ArgsBuilder(Fcn_putToken)
-	var client = NewClientIdentity(t.CCAPI)
-	tokenData.Client = ClientIdentity{MspID: client.MspID, Attrs: client.Attrs} //TODO gossip sync delay workaround:use shortVersion of ClientIdentity
 	args.AppendArg(token)
-	args.AppendBytes(ToJson(*tokenData))
+	args.AppendBytes(ToJson(tokenData))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "") //TODO check response
 }
 
 func GetTokenGlobal(t CommonChaincode, token string) (*TokenData) {
-	if token == "" {
-		return nil
-	}
 	var args = ArgsBuilder(Fcn_getToken)
 	args.AppendArg(token)
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
@@ -49,4 +42,16 @@ func TransferTokenGlobal(t CommonChaincode, token string, request TokenTransferR
 	var tokenData TokenData
 	FromJson(payload, &tokenData)
 	return &tokenData
+}
+func TokenHistory(t CommonChaincode, token string) []KeyModification {
+	var args = ArgsBuilder(Fcn_tokenHistory)
+	args.AppendArg(token)
+
+	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
+	if payload == nil {
+		return nil
+	}
+	var history []KeyModification
+	FromJson(payload, &history)
+	return history
 }
