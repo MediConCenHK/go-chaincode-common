@@ -11,10 +11,10 @@ type Payer interface {
 
 //NIContract: Network-Insurance contract interface
 type NIContract interface {
-	Propose(auth ClinicAuth, params []string) (feeForm string)
-	Modify(auth ClinicAuth, params []string) (extraFee string)
-	Revert(auth ClinicAuth, params []string)
-	Settlement(auth PayerAuth, params []string)
+	Propose(auth ClinicAuth, params []string) []byte
+	Modify(auth ClinicAuth, params []string) []byte
+	Revert(auth ClinicAuth, params []string) []byte
+	Settlement(auth PayerAuth, params []string) []byte
 }
 
 const (
