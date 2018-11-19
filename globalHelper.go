@@ -11,6 +11,7 @@ const (
 	Fcn_getToken      = "getToken"
 	Fcn_transferToken = "transferToken"
 	Fcn_tokenHistory  = "tokenHistory"
+	Fcn_deleteToken   = "deleteToken"
 )
 
 func PutTokenGlobal(t CommonChaincode, token string, tokenData TokenData) {
@@ -42,6 +43,11 @@ func TransferTokenGlobal(t CommonChaincode, token string, request TokenTransferR
 	var tokenData TokenData
 	FromJson(payload, &tokenData)
 	return &tokenData
+}
+func DeleteToken(t CommonChaincode, token string) {
+	var args = ArgsBuilder(Fcn_deleteToken)
+	args.AppendArg(token)
+	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 func TokenHistory(t CommonChaincode, token string) []KeyModification {
 	var args = ArgsBuilder(Fcn_tokenHistory)

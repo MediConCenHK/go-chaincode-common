@@ -7,11 +7,13 @@ import (
 )
 
 type TokenData struct {
-	Owner     string
-	Issuer    string
-	OwnerType OwnerType
-	TokenType TokenType
-	Client    ClientIdentity
+	Owner      string
+	Issuer     string
+	Manager    string
+	OwnerType  OwnerType
+	TokenType  TokenType
+	ExpireDate TimeLong
+	Client     ClientIdentity
 }
 type TokenTransferRequest struct {
 	FromOwner     string
