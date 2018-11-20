@@ -21,7 +21,7 @@ type TestChaincode struct {
 func (t *TestChaincode) Init(stub shim.ChaincodeStubInterface) (response peer.Response) {
 	defer Deferred(DeferHandlerPeerResponse,&response)
 	t.Prepare(stub)
-	t.Logger.Info("########### " + t.Name + " Init ###########")
+	t.Logger.Info("Init")
 	return shim.Success(nil)
 }
 func (t *TestChaincode) Invoke(stub shim.ChaincodeStubInterface) (response peer.Response) {
