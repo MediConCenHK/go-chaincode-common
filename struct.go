@@ -15,8 +15,6 @@ type TokenData struct {
 	Client     ClientIdentity
 }
 type TokenTransferRequest struct {
-	FromOwner     string
-	FromOwnerType OwnerType
 	ToOwner       string
 	ToOwnerType   OwnerType
 }

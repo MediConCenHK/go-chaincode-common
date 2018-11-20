@@ -11,7 +11,7 @@ type InsuranceChaincode struct {
 }
 type NetworkChainCode struct {
 	*CommonChaincode
-	ClinicAuth ClinicAuth
+	ClinicAuth
 	NetworkAuth
 }
 type NIContractChainCode struct {
