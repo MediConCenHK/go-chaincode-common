@@ -14,10 +14,6 @@ type TokenData struct {
 	ExpiryDate TimeLong
 	Client     ClientIdentity
 }
-type TokenTransferRequest struct {
-	ToOwner       string
-	ToOwnerType   OwnerType
-}
 
 type OwnerType byte
 
