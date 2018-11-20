@@ -11,7 +11,7 @@ type TokenData struct {
 	Manager    string
 	OwnerType  OwnerType
 	TokenType  TokenType
-	ExpireDate TimeLong
+	ExpiryDate TimeLong
 	Client     ClientIdentity
 }
 type TokenTransferRequest struct {
