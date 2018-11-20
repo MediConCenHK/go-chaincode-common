@@ -3,7 +3,6 @@ package go_chaincode_common
 import (
 	. "github.com/davidkhala/fabric-common-chaincode-golang"
 	. "github.com/davidkhala/goutils"
-	"strconv"
 )
 
 type TokenData struct {
@@ -27,6 +26,7 @@ type OwnerType byte
 const (
 	_ = iota
 	OwnerTypeMember
+	OwnerTypeClinic
 	OwnerTypeNetwork
 	OwnerTypeInsurance
 )
@@ -34,16 +34,8 @@ const (
 type TokenType byte
 
 func (t OwnerType) To() string {
-	switch t {
-	case OwnerTypeMember:
-		return "member"
-	case OwnerTypeNetwork:
-		return "network"
-	case OwnerTypeInsurance:
-		return "insurance"
-	}
-	PanicString("invalid ownerType" + strconv.Itoa(int(t)))
-	return ""
+	var enum = []string{"member", "network", "clinic", "insurance"}
+	return enum[t]
 }
 
 const (
@@ -53,25 +45,12 @@ const (
 )
 
 func (t TokenType) To() string {
-	var s string
-	switch t {
-	case TokenTypeVerify:
-		s = "verify"
-	case TokenTypePay:
-		s = "pay"
-	}
-	PanicString("invalid tokenType" + strconv.Itoa(int(t)))
-	return s
+	var enum = []string{"verify", "pay"}
+	return enum[t]
 }
 func (TokenType) From(s string) TokenType {
-	switch s {
-	case "verify":
-		return TokenTypeVerify
-	case "pay":
-		return TokenTypePay
-	}
-	PanicString("invalid tokenType:" + s)
-	return 0
+	var typeMap = map[string]TokenType{"verify": TokenTypeVerify, "pay": TokenTypePay}
+	return typeMap[s]
 }
 
 type FeeEntry struct {
