@@ -46,22 +46,22 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:135f7d1001b6c1c91d59e334b92ca6523ed8b3ac69f27436d2f3519f84c6aa23"
+  digest = "1:43c0927e941e4665f00546e63a88d222742d10a26ebf1ab886fca049d763d9c1"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = ["."]
   pruneopts = "UT"
-  revision = "c9d846c8be5c2bad99514feea9b29ea5d1bcbc18"
+  revision = "df5f2dc494f474a48e6a9b963f679e84ebface47"
 
 [[projects]]
   branch = "master"
-  digest = "1:9d75c417be41a4e50a37a63de14232fbdc6c45ebcb504753bd5563a0c8b586e3"
+  digest = "1:46e0f28d76f6ed73c18cf3f2d7ab77ffc697d7ecd15cfd68384bca2bb97fd56b"
   name = "github.com/davidkhala/goutils"
   packages = [
     ".",
     "crypto",
   ]
   pruneopts = "UT"
-  revision = "3270a3a2767306113eb9cadb9fe87a06bef46fde"
+  revision = "bd7a7144103761af5d658d1abb15ac93f8cd2a61"
 
 [[projects]]
   digest = "1:49a2a779b1af8f02547b5a505eb1382f9d42299ec7215f34a32535e6af9a1c9e"
@@ -393,14 +393,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:48b757e61d662021f49a6a0afc67dacae27ee0c3a8f858d927126bcdf49222d3"
+  digest = "1:f343f077a5b0bc3a3788b3a04e24dd417e3e25b2acb529c413e212d2c42416ef"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "ec83556a53fe16b65c452a104ea9d1e86a671852"
+  revision = "0cf1ed9e522b7dbb416f080a5c8003de9b702bf4"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
