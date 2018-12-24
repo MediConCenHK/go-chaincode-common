@@ -21,6 +21,19 @@ type TokenTransferRequest struct {
 	Manager string
 }
 
+func (t TokenTransferRequest) ApplyOn(data TokenData) TokenData {
+	if t.Owner != "" {
+		data.Owner = t.Owner
+	}
+	if t.OwnerType > 0 {
+		data.OwnerType = t.OwnerType
+	}
+	if t.Manager != "" {
+		data.Manager = t.Manager
+	}
+	return data
+}
+
 type OwnerType byte
 
 const (
