@@ -15,6 +15,12 @@ type TokenData struct {
 	Client     ClientIdentity
 }
 
+type TokenTransferRequest struct {
+	Owner string
+	OwnerType
+	Manager string
+}
+
 type OwnerType byte
 
 const (

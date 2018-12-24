@@ -32,10 +32,10 @@ func GetToken(t CommonChaincode, token string) (*TokenData) {
 	FromJson(payload, &tokenData)
 	return &tokenData
 }
-func MoveToken(t CommonChaincode, token string, tokenData TokenData) {
+func MoveToken(t CommonChaincode, token string, request TokenTransferRequest) {
 	var args = ArgsBuilder(Fcn_moveToken)
 	args.AppendArg(token)
-	args.AppendBytes(ToJson(tokenData))
+	args.AppendBytes(ToJson(request))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "") //TODO check response
 }
 func DeleteToken(t CommonChaincode, token string) {
