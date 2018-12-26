@@ -2,6 +2,7 @@ package go_chaincode_common
 
 import (
 	. "github.com/davidkhala/fabric-common-chaincode-golang"
+	"github.com/davidkhala/fabric-common-chaincode-golang/cid"
 	. "github.com/davidkhala/goutils"
 )
 
@@ -12,7 +13,7 @@ type TokenData struct {
 	OwnerType  OwnerType
 	TokenType  TokenType
 	ExpiryDate TimeLong
-	Client     ClientIdentity
+	Client     cid.ClientIdentity
 	MetaData   []byte
 }
 
