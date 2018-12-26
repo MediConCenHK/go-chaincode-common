@@ -13,6 +13,7 @@ type TokenData struct {
 	TokenType  TokenType
 	ExpiryDate TimeLong
 	Client     ClientIdentity
+	MetaData   []byte
 }
 
 type TokenTransferRequest struct {
