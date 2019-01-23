@@ -13,12 +13,14 @@ const (
 	Fcn_tokenHistory = "tokenHistory"
 	Fcn_deleteToken  = "deleteToken"
 	Fcn_moveToken    = "moveToken"
+	Fcn_listTokenEPOrgs    = "listEPOrgs"
 )
 
-func PutToken(t CommonChaincode, token string, tokenData TokenData) {
+func PutToken(t CommonChaincode, token string, tokenData TokenData, epOrgMspId string) {
 	var args = ArgsBuilder(Fcn_putToken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(tokenData))
+	args.AppendArg(epOrgMspId)
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 func RenewToken(t CommonChaincode, token string, newExpiryTime TimeLong) {
@@ -39,10 +41,11 @@ func GetToken(t CommonChaincode, token string) (*TokenData) {
 	FromJson(payload, &tokenData)
 	return &tokenData
 }
-func MoveToken(t CommonChaincode, token string, request TokenTransferRequest) {
+func MoveToken(t CommonChaincode, token string, request TokenTransferRequest, epOrgMspIdAdd string) {
 	var args = ArgsBuilder(Fcn_moveToken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(request))
+	args.AppendArg(epOrgMspIdAdd)
 	t.InvokeChaincode(GlobalCCID, args.Get(), "") //TODO check response
 }
 func DeleteToken(t CommonChaincode, token string) {
