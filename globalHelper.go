@@ -13,6 +13,7 @@ const (
 	Fcn_tokenHistory = "tokenHistory"
 	Fcn_deleteToken  = "deleteToken"
 	Fcn_moveToken    = "moveToken"
+	Fcn_listTokenEPOrgs    = "listEPOrgs"
 )
 
 func PutToken(t CommonChaincode, token string, tokenData TokenData) {

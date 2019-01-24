@@ -11,7 +11,9 @@ type TokenData struct {
 	Manager    string
 	OwnerType  OwnerType
 	TokenType  TokenType
+	TokenSignature []byte
 	ExpiryDate TimeLong
+	TransferDate TimeLong
 	Client     ClientIdentity
 	MetaData   []byte
 }
@@ -20,6 +22,7 @@ type TokenTransferRequest struct {
 	Owner string
 	OwnerType
 	Manager string
+	MetaData   []byte
 }
 
 func (t TokenTransferRequest) ApplyOn(data TokenData) TokenData {
@@ -48,7 +51,7 @@ const (
 type TokenType byte
 
 func (t OwnerType) To() string {
-	var enum = []string{"member", "network", "clinic", "insurance"}
+	var enum = []string{"unknown", "member", "clinic", "network", "insurance"}
 	return enum[t]
 }
 
