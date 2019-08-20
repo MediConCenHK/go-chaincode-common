@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	GlobalCCID       = "global" //used in other chaincode, please DONOT remove
+	GlobalCCID       = "global" // used in other chaincode, please DO NOT remove
 	Fcn_putToken     = "putToken"
 	Fcn_getToken     = "getToken"
 	Fcn_renewToken   = "renewToken"
@@ -28,7 +28,7 @@ func RenewToken(t CommonChaincode, token string, newExpiryTime TimeLong) {
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 
-func GetToken(t CommonChaincode, token string) (*TokenData) {
+func GetToken(t CommonChaincode, token string) *TokenData {
 	var args = ArgsBuilder(Fcn_getToken)
 	args.AppendArg(token)
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
@@ -43,7 +43,7 @@ func MoveToken(t CommonChaincode, token string, request TokenTransferRequest) {
 	var args = ArgsBuilder(Fcn_moveToken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(request))
-	t.InvokeChaincode(GlobalCCID, args.Get(), "") //TODO check response
+	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 func DeleteToken(t CommonChaincode, token string) {
 	var args = ArgsBuilder(Fcn_deleteToken)
