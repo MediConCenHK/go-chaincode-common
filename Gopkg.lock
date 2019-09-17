@@ -45,7 +45,7 @@
   name = "github.com/containerd/continuity"
   packages = ["pathdriver"]
   pruneopts = "UT"
-  revision = "f2a389ac0a02ce21c09edd7344677a601970f41c"
+  revision = "75bee3e2ccb6402e3a986ab8bd3b17003fc0fdec"
 
 [[projects]]
   branch = "master"
@@ -56,18 +56,18 @@
     "cid",
   ]
   pruneopts = "UT"
-  revision = "4c91b89667be4a3f550304cd80a91d7a918c5212"
+  revision = "eb1ebbea5deaeff177d811302a09a48fa63775f7"
 
 [[projects]]
   branch = "master"
-  digest = "1:72433c6dfdbae1ebdc3a48250e40fbc45e902cc74a16bf55a1bd4d282ae67d82"
+  digest = "1:7906100ba587ea4e5edc0f379fcc7682ec3e1eb138f5ec5c5ef771bd812a9b34"
   name = "github.com/davidkhala/goutils"
   packages = [
     ".",
     "crypto",
   ]
   pruneopts = "UT"
-  revision = "777c778e79927a02f93ba40798c15b338523d829"
+  revision = "28480c306db0b24cc6b71d6e8901c92190f5470b"
 
 [[projects]]
   digest = "1:49a2a779b1af8f02547b5a505eb1382f9d42299ec7215f34a32535e6af9a1c9e"
@@ -127,12 +127,12 @@
   version = "v1.2.1"
 
 [[projects]]
-  digest = "1:48092bf6632f55839850666c33469f546f6d45fdbd59a66759ec12e84d853dc2"
+  digest = "1:4882ca4e50712f367a52a467a277dcd8ef877b82acaa5973baea92fe7443f2eb"
   name = "github.com/gogo/protobuf"
   packages = ["proto"]
   pruneopts = "UT"
-  revision = "ba06b47c162d49f2af050fb4c75bcbc86a159d5c"
-  version = "v1.2.1"
+  revision = "0ca988a254f991240804bf9821f3450d87ccbb1b"
+  version = "v1.3.0"
 
 [[projects]]
   digest = "1:fe8273f3c5693e536bbe05d92ab8d05a70fa5806d2d90510bb0d5106c140cc2c"
@@ -150,16 +150,16 @@
   version = "v1.3.2"
 
 [[projects]]
-  digest = "1:1168584a5881d371e96cb0e66ef6db71d7cef0856cc7f311490bc856627f8328"
+  digest = "1:ce681dc0dc4bcbb07d7362299909248ea761c573f557eaba793ac6947fb4a8aa"
   name = "github.com/grpc-ecosystem/go-grpc-middleware"
   packages = ["."]
   pruneopts = "UT"
-  revision = "c250d6563d4d4c20252cd865923440e829844f4e"
-  version = "v1.0.0"
+  revision = "dd15ed025b6054e5253963e355991f3070d4e593"
+  version = "v1.1.0"
 
 [[projects]]
   branch = "release-1.4"
-  digest = "1:94357cedcc6ca832f7b521400da835c84ddee952fca57ceb3ad2496d448605c9"
+  digest = "1:53546716ec0d835f296f6e201267f61770b439062304e22a1d4eb2fdd78fbc03"
   name = "github.com/hyperledger/fabric"
   packages = [
     "bccsp",
@@ -198,7 +198,7 @@
     "protos/utils",
   ]
   pruneopts = "UT"
-  revision = "9b2fde0ec88fc231e6c8217e31a01060370356c3"
+  revision = "6cfdc7d87c4fcb522e4bad249723a89ff2494408"
 
 [[projects]]
   branch = "master"
@@ -209,7 +209,7 @@
     "amcl/FP256BN",
   ]
   pruneopts = "UT"
-  revision = "5ccba6eab8d6b39aa2cdd88db202bba0e25da5d7"
+  revision = "f66264322317494540fb3601fe63420a30fc0ce4"
 
 [[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
@@ -386,15 +386,15 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:9c4fed825c10231651e81bf0ab2c12e3a6cc349dcc62a78f8d3a9dfb6744855e"
+  digest = "1:e6575ce7fb96b6eb87dc0e7b7f861c78f1f98ddae45277bdd8004578ff665dfb"
   name = "golang.org/x/crypto"
   packages = ["sha3"]
   pruneopts = "UT"
-  revision = "4def268fd1a49955bfb3dda92fe3db4f924f2285"
+  revision = "227b76d455e791cb042b03e633e2f7fbcfdf74a5"
 
 [[projects]]
   branch = "master"
-  digest = "1:082ed090a1aedec21b660263f98f72582e431b56e8e27b88cc00faa1510fde14"
+  digest = "1:970a34b46fc4d6dcea441fb2f1419c40fa47fd53fc800bbf0951efda11d99df7"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -406,11 +406,11 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "74dc4d7220e7acc4e100824340f3e66577424772"
+  revision = "c8589233b77dde5edd2205ba8a4fb5c9c2472556"
 
 [[projects]]
   branch = "master"
-  digest = "1:6c97b4baa9cf774b42192e23632afc7dee7b899d4a3dc98057d24708ce1f60ac"
+  digest = "1:cef0763cedef8416ca6f6f13fa1aadd064736a730f056a7aac30b3b03a82990a"
   name = "golang.org/x/sys"
   packages = [
     "cpu",
@@ -418,7 +418,7 @@
     "windows",
   ]
   pruneopts = "UT"
-  revision = "fde4db37ae7ad8191b03d30d27f258b5291ae4e3"
+  revision = "b4ddaad3f8a36719f2b8bc6486c14cc468ca2bb5"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -451,7 +451,7 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "24fa4b261c55da65468f2abfdae2b024eef27dfb"
+  revision = "f660b865573183437d2d868f703fe88bb8af0b55"
 
 [[projects]]
   digest = "1:ab8e92d746fb5c4c18846b0879842ac8e53b3d352449423d0924a11f1020ae1b"
@@ -503,8 +503,6 @@
     "github.com/davidkhala/fabric-common-chaincode-golang",
     "github.com/davidkhala/fabric-common-chaincode-golang/cid",
     "github.com/davidkhala/goutils",
-    "github.com/hyperledger/fabric/core/chaincode/shim",
-    "github.com/hyperledger/fabric/protos/peer",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

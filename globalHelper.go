@@ -6,30 +6,30 @@ import (
 )
 
 const (
-	GlobalCCID       = "global" // used in other chaincode, please DO NOT remove
-	Fcn_putToken     = "putToken"
-	Fcn_getToken     = "getToken"
-	Fcn_renewToken   = "renewToken"
-	Fcn_tokenHistory = "tokenHistory"
-	Fcn_deleteToken  = "deleteToken"
-	Fcn_moveToken    = "moveToken"
+	GlobalCCID      = "global" // used in other chaincode, please DO NOT remove
+	FcnPuttoken     = "putToken"
+	FcnGettoken     = "getToken"
+	FcnRenewtoken   = "renewToken"
+	FcnTokenhistory = "tokenHistory"
+	FcnDeletetoken  = "deleteToken"
+	FcnMovetoken    = "moveToken"
 )
 
 func PutToken(t CommonChaincode, token string, tokenData TokenData) {
-	var args = ArgsBuilder(Fcn_putToken)
+	var args = ArgsBuilder(FcnPuttoken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(tokenData))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 func RenewToken(t CommonChaincode, token string, newExpiryTime TimeLong) {
-	var args = ArgsBuilder(Fcn_renewToken)
+	var args = ArgsBuilder(FcnRenewtoken)
 	args.AppendArg(token)
 	args.AppendArg(newExpiryTime.String())
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 
 func GetToken(t CommonChaincode, token string) *TokenData {
-	var args = ArgsBuilder(Fcn_getToken)
+	var args = ArgsBuilder(FcnGettoken)
 	args.AppendArg(token)
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
 	if payload == nil {
@@ -40,18 +40,18 @@ func GetToken(t CommonChaincode, token string) *TokenData {
 	return &tokenData
 }
 func MoveToken(t CommonChaincode, token string, request TokenTransferRequest) {
-	var args = ArgsBuilder(Fcn_moveToken)
+	var args = ArgsBuilder(FcnMovetoken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(request))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 func DeleteToken(t CommonChaincode, token string) {
-	var args = ArgsBuilder(Fcn_deleteToken)
+	var args = ArgsBuilder(FcnDeletetoken)
 	args.AppendArg(token)
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 func TokenHistory(t CommonChaincode, token string) []KeyModification {
-	var args = ArgsBuilder(Fcn_tokenHistory)
+	var args = ArgsBuilder(FcnTokenhistory)
 	args.AppendArg(token)
 
 	var payload = t.InvokeChaincode(GlobalCCID, args.Get(), "").Payload
