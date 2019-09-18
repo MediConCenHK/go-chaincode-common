@@ -6,23 +6,23 @@ import (
 )
 
 type TokenData struct {
-	Owner      string
-	Issuer     string
-	Manager    string
-	OwnerType  OwnerType
-	TokenType  TokenType
+	Owner          string
+	Issuer         string
+	Manager        string // Manager uses MSP ID in ecosystem
+	OwnerType      OwnerType
+	TokenType      TokenType
 	TokenSignature []byte
-	ExpiryDate TimeLong
-	TransferDate TimeLong
-	Client     ClientIdentity
-	MetaData   []byte
+	ExpiryDate     TimeLong
+	TransferDate   TimeLong
+	Client         ClientIdentity
+	MetaData       []byte
 }
 
 type TokenTransferRequest struct {
 	Owner string
 	OwnerType
-	Manager string
-	MetaData   []byte
+	Manager  string
+	MetaData []byte
 }
 
 func (t TokenTransferRequest) ApplyOn(data TokenData) TokenData {
