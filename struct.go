@@ -6,16 +6,16 @@ import (
 )
 
 type TokenData struct {
-	Owner          string
-	Issuer         string
-	Manager        string // Manager uses MSP ID in ecosystem
-	OwnerType      OwnerType
-	TokenType      TokenType
-	TokenSignature []byte // work as Issuer Client
-	ExpiryDate     TimeLong
-	TransferDate   TimeLong
-	Client         ClientIdentity // latest Operator Client
-	MetaData       []byte
+	Owner        string
+	Issuer       string
+	Manager      string // Manager uses MSP ID in ecosystem
+	OwnerType    OwnerType
+	TokenType    TokenType
+	IssuerClient ClientIdentity
+	ExpiryDate   TimeLong
+	TransferDate TimeLong
+	Client       ClientIdentity // latest Operator Client
+	MetaData     []byte
 }
 
 type TokenTransferRequest struct {
