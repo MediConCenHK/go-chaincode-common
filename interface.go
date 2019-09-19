@@ -9,7 +9,7 @@ type Payer interface {
 	GetMemberData(params []string) []byte
 }
 
-//NIContract: Network-Insurance contract interface
+// NIContract: Network-Insurance contract interface
 type NIContract interface {
 	Propose(params []string) []byte
 	Modify(params []string) []byte
@@ -18,10 +18,10 @@ type NIContract interface {
 }
 
 type VisitData struct {
-	Member         string //derived from QRCode,or plain memberData
-	Clinic         string //provided by clinic
-	Doctor         string //provided by clinic
-	MedicalNetwork string //provided by clinic
+	Member         string // derived from QRCode,or plain memberData
+	Clinic         string // provided by clinic
+	Doctor         string // provided by clinic
+	MedicalNetwork string // provided by clinic
 }
 
 type InsuranceChaincode struct {

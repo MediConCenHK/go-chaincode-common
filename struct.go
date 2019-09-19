@@ -11,17 +11,15 @@ type TokenData struct {
 	Manager        string // Manager uses MSP ID in ecosystem
 	OwnerType      OwnerType
 	TokenType      TokenType
-	TokenSignature []byte
+	TokenSignature []byte // work as Issuer Client
 	ExpiryDate     TimeLong
 	TransferDate   TimeLong
-	Client         ClientIdentity
+	Client         ClientIdentity // latest Operator Client
 	MetaData       []byte
 }
 
 type TokenTransferRequest struct {
-	Owner string
-	OwnerType
-	Manager  string
+	Owner    string
 	MetaData []byte
 }
 
@@ -29,12 +27,10 @@ func (t TokenTransferRequest) ApplyOn(data TokenData) TokenData {
 	if t.Owner != "" {
 		data.Owner = t.Owner
 	}
-	if t.OwnerType > 0 {
-		data.OwnerType = t.OwnerType
+	if t.MetaData != nil {
+		data.MetaData = t.MetaData
 	}
-	if t.Manager != "" {
-		data.Manager = t.Manager
-	}
+
 	return data
 }
 
@@ -71,7 +67,7 @@ func (TokenType) From(s string) TokenType {
 }
 
 type FeeEntry struct {
-	Name      string //co-payment | extra-medicine | surgery | diagnose | sick leave days | refer letter
-	RawAmount string //filled by clinic, extensible for number handle
-	Comment   string //diagnose|refer letter
+	Name      string // co-payment | extra-medicine | surgery | diagnose | sick leave days | refer letter
+	RawAmount string // filled by clinic, extensible for number handle
+	Comment   string // diagnose|refer letter
 }
