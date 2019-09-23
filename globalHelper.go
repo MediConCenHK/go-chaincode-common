@@ -15,10 +15,10 @@ const (
 	FcnMoveToken    = "moveToken"
 )
 
-func PutToken(t CommonChaincode, token string, tokenData TokenData) {
+func PutToken(t CommonChaincode, token string, request TokenCreateRequest) {
 	var args = ArgsBuilder(FcnPutToken)
 	args.AppendArg(token)
-	args.AppendBytes(ToJson(tokenData))
+	args.AppendBytes(ToJson(request))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
 }
 func RenewToken(t CommonChaincode, token string, newExpiryTime TimeLong) {

@@ -7,8 +7,8 @@ import (
 
 type TokenData struct {
 	Owner        string
-	Issuer       string
-	Manager      string // Manager uses MSP ID in ecosystem
+	Issuer       string // uses MSP ID in ecosystem
+	Manager      string // uses MSP ID in ecosystem
 	OwnerType    OwnerType
 	TokenType    TokenType
 	IssuerClient ClientIdentity
@@ -17,7 +17,12 @@ type TokenData struct {
 	Client       ClientIdentity // latest Operator Client
 	MetaData     []byte
 }
-
+type TokenCreateRequest struct {
+	Owner      string
+	TokenType  TokenType
+	ExpiryDate TimeLong
+	MetaData   []byte
+}
 type TokenTransferRequest struct {
 	Owner    string
 	MetaData []byte
