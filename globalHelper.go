@@ -5,9 +5,10 @@ import (
 	. "github.com/davidkhala/goutils"
 )
 
+// used in other chaincode, please DO NOT remove
 const (
-	GlobalCCID      = "global" // used in other chaincode, please DO NOT remove
-	FcnPutToken     = "putToken"
+	GlobalCCID      = "global"
+	FcnCreateToken  = "createToken"
 	FcnGetToken     = "getToken"
 	FcnRenewToken   = "renewToken"
 	FcnTokenHistory = "tokenHistory"
@@ -15,8 +16,8 @@ const (
 	FcnMoveToken    = "moveToken"
 )
 
-func PutToken(t CommonChaincode, token string, request TokenCreateRequest) {
-	var args = ArgsBuilder(FcnPutToken)
+func CreateToken(t CommonChaincode, token string, request TokenCreateRequest) {
+	var args = ArgsBuilder(FcnCreateToken)
 	args.AppendArg(token)
 	args.AppendBytes(ToJson(request))
 	t.InvokeChaincode(GlobalCCID, args.Get(), "")
