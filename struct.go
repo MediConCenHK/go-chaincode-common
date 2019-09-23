@@ -23,6 +23,16 @@ type TokenCreateRequest struct {
 	ExpiryDate TimeLong
 	MetaData   []byte
 }
+
+func (t TokenCreateRequest) Build() TokenData {
+	return TokenData{
+		Owner:      t.Owner,
+		TokenType:  t.TokenType,
+		ExpiryDate: t.ExpiryDate,
+		MetaData:   t.MetaData,
+	}
+}
+
 type TokenTransferRequest struct {
 	Owner    string
 	MetaData []byte
