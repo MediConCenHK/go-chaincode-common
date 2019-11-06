@@ -8,7 +8,7 @@ type Payer interface {
 	GenTokens(params []string) []byte
 }
 
-// NIContract: Network-Insurance contract interface
+// NIContract: Network-Payer contract interface
 type NIContract interface {
 	Propose(params []string) []byte
 	Modify(params []string) []byte

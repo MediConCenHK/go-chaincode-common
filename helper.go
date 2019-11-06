@@ -1,6 +1,8 @@
 package go_chaincode_common
 
-import . "github.com/davidkhala/goutils"
+import (
+	. "github.com/davidkhala/goutils"
+)
 
 func EnsureTransientMap(transient map[string][]byte, property string) []byte {
 	if transient[property] == nil {
