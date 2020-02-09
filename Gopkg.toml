@@ -1,6 +1,6 @@
 [[constraint]]
     name = "github.com/davidkhala/fabric-common-chaincode-golang"
-    branch = "master"
+    branch = "release-1.4"
 
 [[override]]
     name = "github.com/fsouza/go-dockerclient"

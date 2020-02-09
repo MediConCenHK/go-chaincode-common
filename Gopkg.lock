@@ -21,6 +21,14 @@
   version = "v0.3.1"
 
 [[projects]]
+  digest = "1:5d3e23515e7916c152cc665eda0f7eaf6fdf8fdfe7c3dbac97049bcbd649b33f"
+  name = "github.com/Knetic/govaluate"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "d216395917cc49052c7c7094cf57f09657ca08a8"
+  version = "v3.0.0"
+
+[[projects]]
   digest = "1:d5e752c67b445baa5b6cb6f8aa706775c2aa8e41aca95a0c651520ff2c80361a"
   name = "github.com/Microsoft/go-winio"
   packages = [
@@ -48,15 +56,15 @@
   revision = "75bee3e2ccb6402e3a986ab8bd3b17003fc0fdec"
 
 [[projects]]
-  branch = "master"
-  digest = "1:e4e3600950f8c54a45e840c58b6a1d8f8097c964f26fdb32b3545cb8bbf54cdd"
+  branch = "release-1.4"
+  digest = "1:826bccf42a04f5a283a190bc0b4bb95a1bda7899ea10c42c861d456a2720cad3"
   name = "github.com/davidkhala/fabric-common-chaincode-golang"
   packages = [
     ".",
     "cid",
   ]
   pruneopts = "UT"
-  revision = "eb1ebbea5deaeff177d811302a09a48fa63775f7"
+  revision = "6b9d8bfa66de805473a889f18e9e68398b0d902b"
 
 [[projects]]
   branch = "master"
@@ -159,7 +167,7 @@
 
 [[projects]]
   branch = "release-1.4"
-  digest = "1:53546716ec0d835f296f6e201267f61770b439062304e22a1d4eb2fdd78fbc03"
+  digest = "1:4a3cadc7ac6f331eff4f7e3c24db6e69fcb683f22830c727b37ab9df274ec1a6"
   name = "github.com/hyperledger/fabric"
   packages = [
     "bccsp",
@@ -172,27 +180,43 @@
     "bccsp/sw",
     "bccsp/utils",
     "common/attrmgr",
+    "common/capabilities",
+    "common/cauthdsl",
+    "common/chaincode",
+    "common/channelconfig",
+    "common/configtx",
     "common/crypto",
     "common/flogging",
     "common/flogging/fabenc",
     "common/ledger",
     "common/metadata",
     "common/metrics",
+    "common/policies",
     "common/semaphore",
     "common/util",
     "core/chaincode/platforms",
     "core/chaincode/platforms/ccmetadata",
     "core/chaincode/shim",
     "core/comm",
+    "core/common/ccpackage",
+    "core/common/ccprovider",
+    "core/common/privdata",
+    "core/common/sysccprovider",
     "core/config",
     "core/container/util",
+    "core/ledger",
+    "gossip/api",
+    "gossip/common",
     "idemix",
     "msp",
+    "msp/cache",
     "protos/common",
+    "protos/gossip",
     "protos/ledger/queryresult",
     "protos/ledger/rwset",
     "protos/ledger/rwset/kvrwset",
     "protos/msp",
+    "protos/orderer",
     "protos/peer",
     "protos/token",
     "protos/utils",
@@ -210,6 +234,14 @@
   ]
   pruneopts = "UT"
   revision = "f66264322317494540fb3601fe63420a30fc0ce4"
+
+[[projects]]
+  digest = "1:0f4305e5a43e324844412168385a23ff23dafc55369fcbbc2ea77fb974f828cc"
+  name = "github.com/hyperledger/fabric-lib-go"
+  packages = ["healthz"]
+  pruneopts = "UT"
+  revision = "90dc96fb23ab7eb18477e4bfcf9cd8ebdb7209f0"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
@@ -503,6 +535,8 @@
     "github.com/davidkhala/fabric-common-chaincode-golang",
     "github.com/davidkhala/fabric-common-chaincode-golang/cid",
     "github.com/davidkhala/goutils",
+    "github.com/hyperledger/fabric/core/chaincode/shim",
+    "github.com/hyperledger/fabric/protos/peer",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
