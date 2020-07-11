@@ -7,6 +7,7 @@ import (
 	. "github.com/davidkhala/goutils"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	"github.com/hyperledger/fabric/protos/peer"
+	logger "github.com/sirupsen/logrus"
 	"testing"
 )
 
@@ -19,15 +20,15 @@ type TestChaincode struct {
 }
 
 func (t *TestChaincode) Init(stub shim.ChaincodeStubInterface) (response peer.Response) {
-	defer Deferred(DeferHandlerPeerResponse,&response)
+	defer Deferred(DeferHandlerPeerResponse, &response)
 	t.Prepare(stub)
-	t.Logger.Info("Init")
+	logger.Info("Init")
 	return shim.Success(nil)
 }
 func (t *TestChaincode) Invoke(stub shim.ChaincodeStubInterface) (response peer.Response) {
-	defer Deferred(DeferHandlerPeerResponse,&response)
+	defer Deferred(DeferHandlerPeerResponse, &response)
 	var fcn, _ = stub.GetFunctionAndParameters()
-	t.Logger.Info("Invoke fcn: " + fcn)
+	logger.Info("Invoke fcn: " + fcn)
 	t.Prepare(stub)
 	var responseBytes []byte
 	switch fcn {
@@ -41,7 +42,7 @@ func (t *TestChaincode) Invoke(stub shim.ChaincodeStubInterface) (response peer.
 }
 
 var cc = TestChaincode{
-	NewNIContract(testName),
+	NewNIContract(),
 }
 
 func TestInit(t *testing.T) {

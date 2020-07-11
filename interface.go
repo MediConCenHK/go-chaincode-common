@@ -33,14 +33,12 @@ type NIContractChainCode struct {
 	NIContract
 }
 
-func NewNIContract(name string) NIContractChainCode {
+func NewNIContract() NIContractChainCode {
 	var commonCC = CommonChaincode{}
-	commonCC.SetLogger(name)
 	return NIContractChainCode{CommonChaincode: &commonCC}
 }
 
 func NewInsuranceChaincode(name string) InsuranceChaincode {
 	var commonCC = CommonChaincode{}
-	commonCC.SetLogger(name)
 	return InsuranceChaincode{CommonChaincode: &commonCC}
 }
